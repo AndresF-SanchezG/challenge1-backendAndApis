@@ -14,7 +14,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 - Waiting:If the input date string is invalid, the API returns an object having the structure { error : "Invalid Date" }
 - Waiting:An empty date parameter should return the current time in a JSON object with a unix key
 - Waiting:An empty date parameter should return the current time in a JSON object with a utc key
-- 
+  
 # Solution Challenge
 In this challenge I tried to get as close as possible to your solution:
 - Live Site URL: [Replit](https://replit.com/@AndresF-Sanchez/boilerplate-project-timestamp-3)
