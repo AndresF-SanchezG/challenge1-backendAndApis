@@ -2,43 +2,43 @@
 
 Build a full stack JavaScript app that is functionally similar to this: https://timestamp-microservice.freecodecamp.rocks.
 
-Este código es para una aplicación de Node.js que configura una API básica utilizando el marco de trabajo Express.js. La aplicación proporciona puntos finales para manejar solicitudes relacionadas con fechas y devolver marcas de tiempo Unix y cadenas UTC correspondientes. Aquí tienes una explicación del código:
+This code is for a Node.js application that sets up a basic API using the Express.js framework. The application provides endpoints to handle date-related requests and return corresponding Unix timestamps and UTC strings. Here's an explanation of the code:
 
-Importación de Módulos:
+Importing Modules:
 
-Los módulos requeridos, express y cors, se importan para crear el servidor y habilitar el intercambio de recursos entre diferentes orígenes (CORS, por sus siglas en inglés).
-Inicialización de la Aplicación Express:
+The required modules, express and cors, are imported to create the server and enable Cross-Origin Resource Sharing (CORS).
+Initializing the Express App:
 
-Se crea una instancia de la aplicación Express utilizando express().
-Configuración de CORS:
+An instance of the Express app is created using express().
+CORS Configuration:
 
-CORS se habilita mediante el middleware cors para permitir pruebas remotas de la API.
-A los navegadores antiguos que podrían tener problemas con una respuesta 204 se les envía un estado 200.
-Servicio de Archivos Estáticos:
+CORS is enabled using the cors middleware to allow remote testing of the API.
+Legacy browsers that might have issues with a 204 response are sent a 200 status.
+Static File Serving:
 
-La aplicación sirve archivos estáticos ubicados en el directorio "public". Esto es útil para servir archivos del lado del cliente, como CSS, imágenes y JavaScript.
-Enrutamiento Básico:
+The app serves static files located in the "public" directory. This is useful for serving client-side files like CSS, images, and JavaScript.
+Basic Routing:
 
-Cuando se realiza una solicitud a la ruta raíz ("/"), el servidor envía el archivo "index.html" ubicado en el directorio "views".
-Función de Validación de Fechas:
+When a request is made to the root ("/") path, the server sends the "index.html" file located in the "views" directory.
+Date Validation Function:
 
-Se define la función isInvalidDate(date) para verificar si una fecha dada es válida comparando su representación de cadena UTC con "Invalid Date".
-Punto Final de la API para Conversión de Fechas:
+The function isInvalidDate(date) is defined to check if a given date is valid by comparing its UTC string representation with "Invalid Date."
+API Endpoint for Date Conversion:
 
-Se crea un punto final de API (/api/:date) para manejar solicitudes con un parámetro de fecha proporcionado.
-El parámetro se utiliza para crear un objeto JavaScript Date.
-Si la fecha no es válida, se verifica si el parámetro es un valor numérico (marca de tiempo Unix).
-Si la fecha sigue siendo inválida, se envía una respuesta de error.
-Si la fecha es válida, el servidor responde con un objeto que contiene la marca de tiempo Unix y la representación de cadena UTC de la fecha.
-Punto Final de API por Defecto:
+An API endpoint (/api/:date) is created to handle requests with a provided date parameter.
+The parameter is used to create a JavaScript Date object.
+If the date is invalid, it's checked if the parameter is a numeric value (Unix timestamp).
+If the date is still invalid, an error response is sent.
+If the date is valid, the server responds with an object containing the Unix timestamp and UTC string representation of the date.
+Default API Endpoint:
 
-Se define otro punto final de API (/api) para los casos en que no se proporcione un parámetro de fecha.
-Responde con la marca de tiempo Unix actual y la representación de cadena UTC.
-Escucha del Servidor:
+Another API endpoint (/api) is defined for cases when no date parameter is provided.
+It responds with the current Unix timestamp and UTC string representation.
+Server Listening:
 
-El servidor comienza a escuchar en el puerto especificado en la variable process.env.PORT.
-Se registra un mensaje para indicar que el servidor está en ejecución y escuchando en el puerto especificado.
-En resumen, este código crea una aplicación sencilla de Express.js que sirve archivos estáticos, maneja solicitudes de API relacionadas con la conversión de fechas y responde con marcas de tiempo Unix y cadenas UTC. Es un ejemplo básico de cómo construir una API RESTful utilizando Node.js y Express.js.
+The server starts listening on the port specified in the process.env.PORT variable.
+A message is logged to indicate that the server is running and listening on the specified port.
+In summary, this code creates a simple Express.js application that serves static files, handles API requests related to date conversion, and responds with Unix timestamps and UTC strings. It's a basic example of building a RESTful API using Node.js and Express.js.
   
 # Solution Challenge
 In this challenge I tried to get as close as possible to your solution:
